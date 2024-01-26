@@ -17,14 +17,14 @@ int main() {
     cout << "Enter exponent: ";
     cin >> exponent; // Вводим показатель
 
-    int result = power(base, exponent);
+    int result = power(base, exponent); // Передаем в функцию основание и показатель
 
-    cout << base << " to the power of " << exponent << " is equal to " << result << endl;
+    cout << base << " to the power of " << exponent << " is equal to " << result << endl; // Выводим результаты
 
     return 0;
 }
 
-int power(int x, int n) {
+int power(int x, int n) { // Функция power, которая возводит в степень переданное число
     int p = 1;
 
     for(int i = 1; i <= n; i++) {
