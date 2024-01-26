@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/ivanh/CLionProjects/C++Practice/cmake-build-debu
 
 build cmake_object_order_depends_target_C__Practice: phony || CMakeFiles/C__Practice.dir
 
-build CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj: CXX_COMPILER__C__Practice_unscanned_Debug C$:/Users/ivanh/CLionProjects/C++Practice/Lab1/Solution.cpp || cmake_object_order_depends_target_C__Practice
-  DEP_FILE = CMakeFiles\C__Practice.dir\Lab1\Solution.cpp.obj.d
+build CMakeFiles/C__Practice.dir/Lab1/Example1.cpp.obj: CXX_COMPILER__C__Practice_unscanned_Debug C$:/Users/ivanh/CLionProjects/C++Practice/Lab1/Example1.cpp || cmake_object_order_depends_target_C__Practice
+  DEP_FILE = CMakeFiles\C__Practice.dir\Lab1\Example1.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\C__Practice.dir
   OBJECT_FILE_DIR = CMakeFiles\C__Practice.dir\Lab1
@@ -63,7 +63,7 @@ build CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj: CXX_COMPILER__C__Practic
 #############################################
 # Link the executable C__Practice.exe
 
-build C__Practice.exe: CXX_EXECUTABLE_LINKER__C__Practice_Debug CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj
+build C__Practice.exe: CXX_EXECUTABLE_LINKER__C__Practice_Debug CMakeFiles/C__Practice.dir/Lab1/Example1.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\C__Practice.dir
