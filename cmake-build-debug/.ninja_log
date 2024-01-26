@@ -1,0 +1,20 @@
+# ninja log v5
+1	273	7279615080326427	build.ninja	eb6689d7a34f8301
+2	1043	7278804646492371	CMakeFiles/C__Practice.dir/main.cpp.obj	146bd76faa48b93f
+872	1024	7278820854536459	C__Practice.exe	bf1059e8be46a31e
+0	514	7278815083897709	CMakeFiles/C__Practice.dir/Lab1/main.cpp.obj	e96cc75d25853061
+3	871	7278820853057332	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+43	891	7279616705593466	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+891	1252	7279616709149743	C__Practice.exe	bf1059e8be46a31e
+3	1011	7279617708857516	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+1012	1303	7279617711721210	C__Practice.exe	bf1059e8be46a31e
+3	530	7279620274812107	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+531	644	7279620275901375	C__Practice.exe	bf1059e8be46a31e
+3	488	7279624022971493	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+489	586	7279624023910854	C__Practice.exe	bf1059e8be46a31e
+4	663	7279632866367370	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+664	785	7279632867546695	C__Practice.exe	bf1059e8be46a31e
+3	477	7279636350656615	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+478	578	7279636351626058	C__Practice.exe	bf1059e8be46a31e
+3	503	7279640120981930	CMakeFiles/C__Practice.dir/Lab1/Solution.cpp.obj	35cbbd83d39de156
+504	606	7279640121971701	C__Practice.exe	bf1059e8be46a31e

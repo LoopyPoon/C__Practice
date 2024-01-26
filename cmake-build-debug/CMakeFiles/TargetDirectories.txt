@@ -1,0 +1,3 @@
+C:/Users/ivanh/CLionProjects/C++Practice/cmake-build-debug/CMakeFiles/C__Practice.dir
+C:/Users/ivanh/CLionProjects/C++Practice/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ivanh/CLionProjects/C++Practice/cmake-build-debug/CMakeFiles/rebuild_cache.dir
