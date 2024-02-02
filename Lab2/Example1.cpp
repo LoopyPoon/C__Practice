@@ -193,8 +193,8 @@ vector<float> findSumColumns(float m[N][N]) {
 }
 
 // Функция для нахождения минимального значения строк
-vector<float> findMinRows(const float m[N][N]) {
-    vector<float> rowMins(N, m[0][0]);
+vector<float> findMinRows(float m[N][N]) {
+    vector<float> rowMins(N, INT_MAX); // Вектор из 5ти элементов, минимальным значеним объявляется [0][0]
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (m[i][j] < rowMins[i]) {
@@ -207,7 +207,7 @@ vector<float> findMinRows(const float m[N][N]) {
 
 // Функция для нахождения минимального значения столбцов
 vector<float> findMinColumns(const float m[N][N]) {
-    vector<float> colMins(N, m[0][0]);
+    vector<float> colMins(N, INT_MAX);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (m[i][j] < colMins[j]) {
@@ -220,7 +220,7 @@ vector<float> findMinColumns(const float m[N][N]) {
 
 // Функция для нахождения максимального значения строк
 vector<float> findMaxRows(const float m[N][N]) {
-    vector<float> rowMaxs(N, m[0][0]);
+    vector<float> rowMaxs(N, INT_MIN);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (m[i][j] > rowMaxs[i]) {
@@ -233,7 +233,7 @@ vector<float> findMaxRows(const float m[N][N]) {
 
 // Функция для нахождения максимального значения столбцов
 vector<float> findMaxColumns(const float m[N][N]) {
-    vector<float> colMaxs(N, m[0][0]);
+    vector<float> colMaxs(N, INT_MIN);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (m[i][j] > colMaxs[j]) {
@@ -270,6 +270,49 @@ vector<float> findAverageColumns(const float m[N][N]) {
     return colAverages;
 }
 
+// Функция для нахождения сумм нижне и верхнетругольной частей матрицы
+float findSumLowerUpperTriangular(const float m[N][N]) {
+    float sum = 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (i >= j) { // Если первый счетчик больше второго, то ...
+                // Нижнетреугольная часть
+                sum += m[i][j];
+            } else {
+                // Верхнетреугольная часть
+                sum += m[i][j];
+            }
+        }
+    }
+    return sum;
+}
+
+// Функция для нахождения элемента, наиболее близкого по значению к среднеарифметическому
+float findClosestToAverage(const float m[N][N]) { // Находим среднеарифметическое
+    float sum = 0;
+    int count = 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            sum += m[i][j];
+            count++;
+        }
+    }
+    float average = sum / count;
+
+    float closestVal = m[0][0]; // Изначально ближайшее значение равно первому элементу
+    float minDiff = abs(m[0][0] - average); // Возвращает модуль разницы между первым элементом и средним
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            float diff = abs(m[i][j] - average); // Находим модуль разницы между [i][j] и средним
+            if (diff < minDiff) { // Если разница меньше изначальной разницы
+                closestVal = m[i][j]; // Меням ближайшее на него
+                minDiff = diff; // Минимальную разницу также изменяем на разницу
+            }
+        }
+    }
+    return closestVal;
+}
+
 int main() {
 
 //    srand(time(0)); // Отключает псевдорандом
@@ -296,6 +339,14 @@ int main() {
     float averageUpperTriangular = findAverageUpperTriangular(m);
     vector<float> sumRows = findSumRows(m);
     vector<float> sumColumns = findSumColumns(m);
+    vector<float> minRows = findMinRows(m);
+    vector<float> minColumns = findMinColumns(m);
+    vector<float> maxRows = findMaxRows(m);
+    vector<float> maxColumns = findMaxColumns(m);
+    vector<float> averageRows = findAverageRows(m);
+    vector<float> averageColumns = findAverageColumns(m);
+    float lowerUpperTriangular = findSumLowerUpperTriangular(m);
+    float closestToAverage = findClosestToAverage(m);
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -326,6 +377,38 @@ int main() {
         cout << el << " ";
     }
     cout << endl;
+    cout << "Minimal row values : ";
+        for (float el : minRows) {
+            cout << el << " ";
+        }
+        cout << endl;
+    cout << "Minimal column values: ";
+        for (float el : minColumns) {
+            cout << el << " ";
+        }
+        cout << endl;
+    cout << "Maximum row values: ";
+        for (float el : maxRows) {
+            cout << el << " ";
+        }
+        cout << endl;
+    cout << "Maximum column values: ";
+        for (float el : maxColumns) {
+            cout << el << " ";
+        }
+        cout << endl;
+    cout << "Average row values: ";
+        for (float el : averageRows) {
+            cout << el << " ";
+        }
+        cout << endl;
+    cout << "Average column values: ";
+        for (float el : averageColumns) {
+            cout << el << " ";
+        }
+        cout << endl;
+    cout << "Sum lower and upper triangle value: " << lowerUpperTriangular << endl;
+    cout << "Closest to average value: " << closestToAverage << endl;
 
 //    getch(); // Не дает программе завершиться, пока не будет введен символ
     return 0;
