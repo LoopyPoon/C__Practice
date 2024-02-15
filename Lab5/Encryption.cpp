@@ -9,14 +9,18 @@
 using namespace std;
 
 void encryptFile(const string& inputFile, const string& outputFile, const string& key) {
+
+    // Передаем в поток два файла для чтения и записи
     ifstream fin(inputFile);
     ofstream fout(outputFile);
 
+    // Проверка, что файл для чтения открыт
     if (!fin.is_open()) {
         cerr << "Error: Unable to open input file: " << inputFile << endl;
         return;
     }
 
+    // Проверка, что файл для записи открыт
     if (!fout.is_open()) {
         cerr << "Error: Unable to open output file: " << outputFile << endl;
         return;
@@ -27,10 +31,9 @@ void encryptFile(const string& inputFile, const string& outputFile, const string
     char c;
 
     while (fin.get(c)) {
-        c = c ^ key[keyIndex]; // Perform XOR encryption
+        c = c ^ key[keyIndex]; // Выполняем заданный алгоритм шифрования
         fout << c;
 
-        // Move to the next character in the key, or cycle back to the beginning if necessary
         keyIndex = (keyIndex + 1) % keyLength;
     }
 
@@ -40,11 +43,12 @@ void encryptFile(const string& inputFile, const string& outputFile, const string
 
 int main() {
 
+    // Объявляем пути к файлам
     string inputFile = "C:\\Users\\ivanh\\CLionProjects\\C++Practice\\Lab5\\testEncrypt.txt";
     string outputFile = "C:\\Users\\ivanh\\CLionProjects\\C++Practice\\Lab5\\testEncrypt2.txt";
     string key = "key";
 
-    // Encrypt the input file
+    // Вызываем функцию
     encryptFile(inputFile, outputFile, key);
 
     cout << "Encryption and decryption completed successfully." << endl;
